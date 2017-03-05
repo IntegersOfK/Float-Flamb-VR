@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float Fight.Plugins", "Float Fight.Plugins.csproj", "{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float Fight", "Float Fight.csproj", "{5B51162C-F52F-C2C0-42B8-8F9920CEF21B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float Fight.Editor", "Float Fight.Editor.csproj", "{AE716B61-DFC8-6C82-975E-9F5F61D259F5}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B51162C-F52F-C2C0-42B8-8F9920CEF21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B51162C-F52F-C2C0-42B8-8F9920CEF21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B51162C-F52F-C2C0-42B8-8F9920CEF21B}.Release|Any CPU.ActiveCfg = Release|Any CPU

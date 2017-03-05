@@ -75,6 +75,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Float Fight.Plugins.csproj">
+      <Project>{FC5BF65B-A6A0-D66F-7CC2-83311EF7A2C0}</Project>
+      <Name>Float Fight.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Circleup.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundController.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundMaterials.cs" />
@@ -131,6 +137,7 @@
     <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRIntegration.cs" />
     <Compile Include="Assets\Pusher.cs" />
     <Compile Include="Assets\RGBResultSelf.cs" />
+    <Compile Include="Assets\Resize.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -236,6 +243,7 @@
     <Compile Include="Assets\ToggleGravity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />

@@ -23,7 +23,6 @@ public class RGBResultSelf : MonoBehaviour {
 
     void ApplesChanged(float updatedNumber)
     {
-        UpdateColor();
         StartCoroutine(UpdateColor());
     }
 
