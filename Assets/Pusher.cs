@@ -6,12 +6,18 @@ public class Pusher : MonoBehaviour
 
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
     private SteamVR_TrackedObject trackedObj;
-    private bool dePadUp = false;
-    private bool dePadDown = false;
+    private float dePadUp = 0f;
+    private float dePadDown = 0f;
+    public GameObject displayCyl;
+    private Renderer rend;
+    public Color pullColor;
+    public Color pushColor;
+
 
     void Start()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        this.rend = displayCyl.GetComponent<Renderer>();
     }
 
     void Update()
@@ -22,33 +28,17 @@ public class Pusher : MonoBehaviour
             return;
         }
 
-        if (controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+        if (controller.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
-            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).y > 0.5f)
-            {
-                
-                Debug.Log(trackedObj.index + " Movement Dpad Up");
-                this.dePadDown = false;
-                this.dePadUp = !this.dePadUp;
-            }
-
-
-            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).y < -0.5f)
-            {
-                Debug.Log(trackedObj.index + " Movement Dpad Down");
-                this.dePadUp = false;
-                this.dePadDown = !this.dePadDown;
-            }
-
-            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).x > 0.5f)
-            {
-                Debug.Log(trackedObj.index + " Movement Dpad Right");
-            }
-
-            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).x < -0.5f)
-            {
-                Debug.Log(trackedObj.index + " Movement Dpad Left");
-            }
+            dePadUp = controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).y;
+            displayCyl.SetActive(true);
+            rend.material.color = Color.Lerp(pullColor, pushColor, dePadUp*2);
+            //print(dePadUp);
+        }
+        else
+        {
+            dePadUp = 0f;
+            displayCyl.SetActive(false);
         }
     }
 
@@ -56,17 +46,17 @@ public class Pusher : MonoBehaviour
     
     private void OnTriggerStay(Collider other)
     {
-        if (dePadUp && other.gameObject.tag == "Box")
+        if (dePadUp!=0f && other.gameObject.tag == "Box")
         {
             //Vector3 direction = other.gameObject.GetComponent<Transform>().position - controller.transform.pos;
             //direction.Normalize();
-            other.GetComponent<Rigidbody>().AddForce(transform.up * -1f);
+            other.GetComponent<Rigidbody>().AddForce(transform.up * dePadUp/2*-1);
         }
 
-        if (dePadDown && other.gameObject.tag == "Box")
-        {
-            other.GetComponent<Rigidbody>().AddForce(transform.up * 1f);
-        }
+       // if (dePadDown && other.gameObject.tag == "Box")
+      //  {
+     //       other.GetComponent<Rigidbody>().AddForce(transform.up * 100f);
+     //   }
 
     }
 
