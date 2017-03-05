@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RGBResultSelf : MonoBehaviour {
-
+    
     public NVRSlider SliderRed;
     public NVRSlider SliderGreen;
     public NVRSlider SliderBlue;
@@ -24,13 +24,15 @@ public class RGBResultSelf : MonoBehaviour {
     void ApplesChanged(float updatedNumber)
     {
         UpdateColor();
-
+        StartCoroutine(UpdateColor());
     }
 
-    private void UpdateColor()
+    IEnumerator UpdateColor()
     {
+
+        yield return new WaitForSeconds(1f); //gotta wait for the stupid slider to stop sliding after ending interaction
         //if (SliderRed.CurrentValue != Result.material.color.r || SliderGreen.CurrentValue != Result.material.color.g || SliderBlue.CurrentValue != Result.material.color.b) {
-            Result.material.color = new Color(SliderRed.CurrentValue, SliderGreen.CurrentValue, SliderBlue.CurrentValue);
+        Result.material.color = new Color(SliderRed.CurrentValue, SliderGreen.CurrentValue, SliderBlue.CurrentValue);
         //}
         
     }
