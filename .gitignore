@@ -1,0 +1,6 @@
+Library/
+Assets/SteamVR/
+Assets/NewtonVR/
+ProjectSettings/
+Temp/
+*.csproj
