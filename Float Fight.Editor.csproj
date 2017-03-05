@@ -133,6 +133,15 @@
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MixCast\Resources\Hidden - AlphaWrite.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - DepthWrite.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - ForegroundBlit.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - ScreenSpaceShadows NoFade.shader" />
+    <None Include="Assets\MixCast\Shaders\BPR_ShaderHelpers.cginc" />
+    <None Include="Assets\MixCast\Shaders\MixCast-ChromakeyDepth.shader" />
+    <None Include="Assets\MixCast\Shaders\MixCast-ChromakeyFlat.shader" />
+    <None Include="Assets\MixCast\Shaders\Unlit-Texture NoAlpha.shader" />
+    <None Include="Assets\MixCast\readme.txt" />
     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />

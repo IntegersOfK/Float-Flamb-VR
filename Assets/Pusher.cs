@@ -1,25 +1,74 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Pusher : MonoBehaviour {
+public class Pusher : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
+    private SteamVR_TrackedObject trackedObj;
+    private bool dePadUp = false;
+    private bool dePadDown = false;
 
-    private void OnCollisionStay(Collision collision)
-
+    void Start()
     {
-        if (collision.gameObject.tag == "Box") { 
+        trackedObj = GetComponent<SteamVR_TrackedObject>();
+    }
 
-        collision.transform.Translate(Vector3.down * Time.deltaTime * 5);
+    void Update()
+    {
+        if (controller == null)
+        {
+            Debug.Log("Controller not initialized");
+            return;
+        }
+
+        if (controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+        {
+            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).y > 0.5f)
+            {
+                
+                Debug.Log(trackedObj.index + " Movement Dpad Up");
+                this.dePadDown = false;
+                this.dePadUp = !this.dePadUp;
+            }
+
+
+            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).y < -0.5f)
+            {
+                Debug.Log(trackedObj.index + " Movement Dpad Down");
+                this.dePadUp = false;
+                this.dePadDown = !this.dePadDown;
+            }
+
+            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).x > 0.5f)
+            {
+                Debug.Log(trackedObj.index + " Movement Dpad Right");
+            }
+
+            if (controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad).x < -0.5f)
+            {
+                Debug.Log(trackedObj.index + " Movement Dpad Left");
+            }
         }
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+   
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (dePadUp && other.gameObject.tag == "Box")
+        {
+            //Vector3 direction = other.gameObject.GetComponent<Transform>().position - controller.transform.pos;
+            //direction.Normalize();
+            other.GetComponent<Rigidbody>().AddForce(transform.up * -1f);
+        }
+
+        if (dePadDown && other.gameObject.tag == "Box")
+        {
+            other.GetComponent<Rigidbody>().AddForce(transform.up * 1f);
+        }
+
+    }
+
+
 }

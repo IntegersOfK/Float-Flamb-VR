@@ -30,8 +30,8 @@ public class Resize : MonoBehaviour
 
     IEnumerator UpdateSize()
     {
-        yield return new WaitForSeconds(1.0f); //gotta wait for the stupid slider to stop sliding after ending interaction
-        iTween.ScaleTo(gameObject, iTween.Hash("x", SliderSize.CurrentValue / 2, "y", SliderSize.CurrentValue / 2, "z", SliderSize.CurrentValue / 2, "easeType", "easeInOutExpo", "speed", 0.1f,"delay", 0.5));
+        yield return new WaitForSeconds(0.5f); //gotta wait for the stupid slider to stop sliding after ending interaction
+        iTween.ScaleTo(gameObject, iTween.Hash("x", SliderSize.CurrentValue / 2, "y", SliderSize.CurrentValue / 2, "z", SliderSize.CurrentValue / 2, "easeType", "easeInOutExpo", "speed", 0.1f));
 
     }
 

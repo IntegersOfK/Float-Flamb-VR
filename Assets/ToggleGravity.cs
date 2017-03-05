@@ -9,12 +9,14 @@ public class ToggleGravity : MonoBehaviour {
     {
         foreach (GameObject box in gravItems)
         {
+            if (box != null) { 
             if (box.GetComponent<Rigidbody>().useGravity == true) {
                 box.GetComponent<Rigidbody>().useGravity = false;
             }
             else
             {
                 box.GetComponent<Rigidbody>().useGravity = true;
+            }
             }
         }
     }

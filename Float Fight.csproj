@@ -82,6 +82,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Circleup.cs" />
+    <Compile Include="Assets\Example\Scripts\GrabThrow.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\BufferedMixCastCamera.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\ImmediateMixCastCamera.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\MixCastCamera.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\MixCastCameras.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\QuadrantMixCastCamera.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Cameras\SetActiveChildFromCameraMode.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Data\CameraComponent.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Data\CameraConfigContext.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Data\MixCastData.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Data\MixCastRegistry.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Data\SetCameraConfigFromIndex.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Extras\RotateRoomControls.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Extras\SlateUi.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Feed\WebcamFeedSource.cs" />
+    <Compile Include="Assets\MixCast\Scripts\MixCast.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Rendering\HideObjectForCamera.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Rendering\SetGroundOriginFromRaycast.cs" />
+    <Compile Include="Assets\MixCast\Scripts\Rendering\SetRenderingForMixCast.cs" />
+    <Compile Include="Assets\MixCast\Scripts\UI\MixCastToggle.cs" />
+    <Compile Include="Assets\MixCast\Scripts\UI\SetActiveFromMixCastState.cs" />
+    <Compile Include="Assets\MixCast\Scripts\UI\SetImageFromMixCastOutput.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundController.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundMaterials.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundObject.cs" />
@@ -135,6 +157,7 @@
     <Compile Include="Assets\NewtonVR\Oculus\NVROculusIntegration.cs" />
     <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRInputDevice.cs" />
     <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRIntegration.cs" />
+    <Compile Include="Assets\NonDrawingGraphic.cs" />
     <Compile Include="Assets\Pusher.cs" />
     <Compile Include="Assets\RGBResultSelf.cs" />
     <Compile Include="Assets\Resize.cs" />
@@ -243,6 +266,15 @@
     <Compile Include="Assets\ToggleGravity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MixCast\Resources\Hidden - AlphaWrite.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - DepthWrite.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - ForegroundBlit.shader" />
+    <None Include="Assets\MixCast\Resources\Hidden - ScreenSpaceShadows NoFade.shader" />
+    <None Include="Assets\MixCast\Shaders\BPR_ShaderHelpers.cginc" />
+    <None Include="Assets\MixCast\Shaders\MixCast-ChromakeyDepth.shader" />
+    <None Include="Assets\MixCast\Shaders\MixCast-ChromakeyFlat.shader" />
+    <None Include="Assets\MixCast\Shaders\Unlit-Texture NoAlpha.shader" />
+    <None Include="Assets\MixCast\readme.txt" />
     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
