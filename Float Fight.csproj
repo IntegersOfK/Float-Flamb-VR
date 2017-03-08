@@ -158,6 +158,8 @@
     <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRInputDevice.cs" />
     <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRIntegration.cs" />
     <Compile Include="Assets\NonDrawingGraphic.cs" />
+    <Compile Include="Assets\OrbitMe.cs" />
+    <Compile Include="Assets\Orbiter.cs" />
     <Compile Include="Assets\Pusher.cs" />
     <Compile Include="Assets\RGBResultSelf.cs" />
     <Compile Include="Assets\Resize.cs" />
